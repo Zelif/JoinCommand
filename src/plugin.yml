@@ -1,0 +1,13 @@
+name: JoinCommand
+main: me.kohle.JoinCommand.JoinCommand
+version: 1.0-l
+author: Kohle
+commands:
+    hi:
+        description: Debug the thing!
+        usage: |
+            /hi
+    hi2:
+        description: Debug the damn thing!
+        usage: |
+            /hi2
