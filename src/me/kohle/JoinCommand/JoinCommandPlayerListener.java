@@ -33,12 +33,13 @@ public class JoinCommandPlayerListener extends PlayerListener {
         if(!player.hasPlayedBefore()){
             //Call to get FirstCommands if the person has no dat file (first time logging on)
             List<Object> stuff2 = plugin.getConfig().getList("FirstCommand");
-            player.sendMessage("Welcome");
+    	if(!(stuff2 == null)){
         for (Object s : stuff2) {
         	player.performCommand((String) s); 
         	System.out
         	.println( "[JoinCommand] " + name + ": logged in for first time. " );
         	}
+        }
         }
 
 		//If the player is not present when the player joins:
