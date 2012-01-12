@@ -49,7 +49,7 @@ public class JoinCommand extends JavaPlugin {
 	    //The save on disable that was here prevented writing to the file when the server was active.
 	  } 
 	  public static void pluginInfo(String message) {
-	    	String v = "1.1-a";
+	    	String v = "1.1-b";
 	    	System.out.println("[JoinCommand] Version " + v + " " + message);
 	  }
 	  
@@ -68,7 +68,7 @@ public class JoinCommand extends JavaPlugin {
 		  		}
 				return true;
 			}
-		  else if(commandLabel.equalsIgnoreCase("jc-reload")) {   //ingame command to reload config, can also be used in console
+		  else if(commandLabel.equalsIgnoreCase("jc-reload") && sender.hasPermission("JoinCommand.reload")) {   //ingame command to reload config, can also be used in console
 			  reloadConfig();
 			  sender.sendMessage("JoinCommand config reloaded.");
 			  return true;
