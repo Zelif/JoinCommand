@@ -28,8 +28,6 @@ public class JoinCommandPlayerListener extends PlayerListener {
         	for (Object s : stuff) {
         		player.performCommand((String) s); 
         		//Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), (String) s);
-        		//Thinking about making this command done by the server not the player as new people might not have any permissions.
-        		//Only for first join tho
         	}
         }
 	}
@@ -43,14 +41,17 @@ public class JoinCommandPlayerListener extends PlayerListener {
 			System.out.println("[JoinCommand] A non-player joined the server... what would do that?!");
 		}
 
-        if(!player.hasPlayedBefore()){
+        if(!player.hasPlayedBefore() && player.hasPermission("JoinCommand.FirstCommand")) {
+
         	String listType = "FirstComamnd";   //Call to get FirstCommands if its the players first time logging on
             filterCommand(player , listType);
         	System.out
         	.println( "[JoinCommand] " + name + ": logged in for first time. " );
         }
+        if(player.hasPermission("JoinCommand.NormalCommand")) {
+    		String listType = "Commands";
+    		filterCommand(player , listType);
+        }
 
-    	String listType = "Commands";
-        filterCommand(player , listType);
-		}
+	}
 }
