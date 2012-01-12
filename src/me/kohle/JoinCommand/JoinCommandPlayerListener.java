@@ -43,7 +43,7 @@ public class JoinCommandPlayerListener extends PlayerListener {
 
         if(!player.hasPlayedBefore() && player.hasPermission("JoinCommand.FirstCommand")) {
 
-        	String listType = "FirstComamnd";   //Call to get FirstCommands if its the players first time logging on
+        	String listType = "FirstCommand";   //Call to get FirstCommands if its the players first time logging on
             filterCommand(player , listType);
         	System.out
         	.println( "[JoinCommand] " + name + ": logged in for first time. " );
