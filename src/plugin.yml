@@ -7,7 +7,7 @@ commands:
         description: Debug the thing!
         usage: |
             /hi
-    hi2:
-        description: Debug the damn thing!
+    jc-reload:
+        description: Reloads config.
         usage: |
-            /hi2
+            /jc-reload
