@@ -49,7 +49,7 @@ public class JoinCommand extends JavaPlugin {
 	    //The save on disable that was here prevented writing to the file when the server was active.
 	  } 
 	  public static void pluginInfo(String message) {
-	    	String v = "1.0-l";
+	    	String v = "1.1-a";
 	    	System.out.println("[JoinCommand] Version " + v + " " + message);
 	  }
 	  
