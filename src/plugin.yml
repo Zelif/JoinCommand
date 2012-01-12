@@ -1,6 +1,6 @@
 name: JoinCommand
 main: me.kohle.JoinCommand.JoinCommand
-version: 1.1-a
+version: 1.1-b
 author: Kohle
 commands:
     hi:
@@ -11,3 +11,19 @@ commands:
         description: Reloads config.
         usage: |
             /jc-reload
+permissions:
+    JoinCommand.*:
+        description: Gives access to all doorman commands
+        children:
+            JoinCommand.reload: true
+            JoinCommand.FirstCommand: true
+            JoinCommand.NormalCommand: true
+    JoinCommand.reload:
+        description: Allows you to reload the config
+        default: op
+    JoinCommand.FirstCommand:
+        description: Allows first time command to pass
+        default: not op
+    JoinCommand.NormalCommand:
+        description: Allows every logon command
+        default: not op
