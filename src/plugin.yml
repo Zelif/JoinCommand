@@ -1,6 +1,6 @@
 name: JoinCommand
 main: me.kohle.JoinCommand.JoinCommand
-version: 1.0-l
+version: 1.0-M
 author: Kohle
 commands:
     hi:
