@@ -15,7 +15,7 @@ public class JoinCommand extends JavaPlugin {
 	
 	
 	//Setting default list
-	String[] list = {"hi", "hi2"};
+	String[] list = {"hi", "version"};
 
 
 	public void loadConfiguration(){
@@ -53,14 +53,24 @@ public class JoinCommand extends JavaPlugin {
 	    	System.out.println("[JoinCommand] Version " + v + " " + message);
 	  }
 	  
-	  public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
-		  Player player =  (Player)sender;
-		  if(commandLabel.equalsIgnoreCase("hi")) {
-			  player.sendMessage("Please Edit the Config file, replace");
-			  return true;
+	  public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
+		  Player player = null;  //Sets player to null so if issued by Console it will not NPE
+		  if (sender instanceof Player) {	// Sets the sender if it is a player
+			player = (Player) sender;
 		  }
-		  else if(commandLabel.equalsIgnoreCase("hi2")) {
-			  player.sendMessage("hi & hi2 with the command(s) you want");
+		  	if(commandLabel.equalsIgnoreCase("hi")) {
+		  		if(player == null) {  //if there is no player it will issue a msg in the console
+		  			sender.sendMessage("[JoinCommand] Only players can issue this command.");
+		  		}
+		  		else{	//if it has been sent by a player the default msgs are used.
+		  			player.sendMessage("Please Edit the Config file, replace");
+		  			player.sendMessage("hi and hi2 with the command(s) you want");
+		  		}
+				return true;
+			}
+		  else if(commandLabel.equalsIgnoreCase("jc-reload")) {   //ingame command to reload config, can also be used in console
+			  reloadConfig();
+			  sender.sendMessage("JoinCommand config reloaded.");
 			  return true;
 		  }
 		return false;
