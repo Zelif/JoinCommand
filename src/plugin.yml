@@ -13,7 +13,7 @@ commands:
             /jc-reload
 permissions:
     JoinCommand.*:
-        description: Gives access to all doorman commands
+        description: Gives access to all JoindCommand
         children:
             JoinCommand.reload: true
             JoinCommand.FirstCommand: true
