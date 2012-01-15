@@ -1,16 +1,24 @@
 name: JoinCommand
 main: me.kohle.JoinCommand.JoinCommand
-version: 1.1-b
+version: 1.1-d
 author: Kohle
 commands:
-    hi:
+    jc:
         description: Debug the thing!
         usage: |
-            /hi
+            /<command>
     jc-reload:
         description: Reloads config.
         usage: |
-            /jc-reload
+            /<command>
+    jc-addcommand:
+        description: Adds a command to config.
+        usage: |
+            /<command> [listType] [Command]
+    jc-ac:
+        description: Adds a command to config.
+        usage: |
+            /<command> [listType] [Command]
 permissions:
     JoinCommand.*:
         description: Gives access to all JoindCommand
@@ -18,7 +26,12 @@ permissions:
             JoinCommand.reload: true
             JoinCommand.FirstCommand: true
             JoinCommand.NormalCommand: true
+            JoinCommand.addcommand: true
+        default: op
     JoinCommand.reload:
+        description: Allows you to reload the config
+        default: op
+    JoinCommand.addcommand:
         description: Allows you to reload the config
         default: op
     JoinCommand.FirstCommand:
