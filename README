@@ -8,6 +8,15 @@ Permission Nodes:
     JoinCommand.reload: true
     JoinCommand.FirstCommand: true
     JoinCommand.NormalCommand: true
+    JoinCommand.addCommand: true
+
+Commands:
+/jc (replaced hi)
+/jc-reload
+/jc-addcommand
+|___ /jc-ac
+
+
 
 I hope people enjoy!
 
